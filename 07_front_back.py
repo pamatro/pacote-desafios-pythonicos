@@ -13,8 +13,8 @@ a-frente + b-frente + a-trás + b-trás
 def front_back(a, b):
     parteA1, parteA2 = a[0:(len(a)//2 if len(a)%2 == 0 else ((len(a)//2)+1))], a[len(a)//2 if len(a)%2 == 0 else ((len(a)//2)+1):]
     parteB1, parteB2 = b[0:(len(b)//2 if len(b)%2 == 0 else ((len(b)//2)+1))], b[len(b)//2 if len(b)%2 == 0 else ((len(b)//2)+1):]
-    s = parteA1 + parteB1 + parteA2 + parteB2
-    return s
+
+    return parteA1 + parteB1 + parteA2 + parteB2
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
