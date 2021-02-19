@@ -10,8 +10,12 @@ A sua solução deve rodar em tempo linear, ou seja, deve fazer uma
 """
 
 def linear_merge(list1, list2):
-    # +++ SUA SOLUÇÃO +++
-    return
+    nova = []
+
+    while list1 and list2:
+        nova.append((list1 if list1[-1] > list2[-1] else list2).pop(-1))
+
+    return (nova + list1)[-1::-1]
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
