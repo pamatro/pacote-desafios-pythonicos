@@ -52,10 +52,41 @@ e conferindo cada etapa do seu progresso.
 """
 
 import sys
+from collections import Counter
 
 
-# +++ SUA SOLUÇÃO +++
-# Defina as funções print_words(filename) e print_top(filename).
+def print_words(arquivo):
+    f = open('letras.txt', 'r')
+    message = f.read()
+    lista1 = []
+
+    for c in message:
+        if c != ' ' and c != '\n':
+            lista1.append(c.lower())
+            lista1.sort()
+
+    resultado = dict((Counter(lista1)))
+
+    print(resultado)
+    f.close()
+
+
+def print_top(arquivo):
+    f = open('letras.txt', 'r')
+    message = f.read()
+    lista1 = []
+
+    for c in message:
+        if c != ' ' and c != '\n':
+            lista1.append(c.lower())
+
+    resultado = dict((Counter(sorted(lista1, key=Counter(lista1).get, reverse=True))))
+
+    while len(resultado) > 20:
+        resultado.popitem()
+
+    print(resultado)
+    f.close()
 
 
 # A função abaixo chama print_words() ou print_top() de acordo com os
